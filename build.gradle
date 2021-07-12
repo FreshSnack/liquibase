@@ -1,0 +1,26 @@
+plugins {
+    id 'org.springframework.boot' version '2.4.4'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+    id 'java'
+}
+
+group = 'net.snack'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+repositories {
+    maven {
+        url "http://maven.ruixin.net/repository/RXGroup/"
+    }
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-data-jdbc'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    implementation 'org.liquibase:liquibase-core'
+    runtimeOnly 'mysql:mysql-connector-java:8.0.19'
+}
+
+test {
+    useJUnitPlatform()
+}
